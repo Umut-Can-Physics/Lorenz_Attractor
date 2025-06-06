@@ -10,3 +10,5 @@ makedocs(
     ],
 )
 
+deploydocs(devbranch = "main")
+

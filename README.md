@@ -18,3 +18,8 @@ julia --project=docs docs/make.jl
 ```
 
 The generated site will be available in `docs/build`.
+
+When hosted on GitHub, the documentation is automatically deployed to the
+`gh-pages` branch using GitHub Actions. You can view the rendered pages at
+`https://<USERNAME>.github.io/Lorenz_Attractor` (replace `<USERNAME>` with your
+GitHub handle).

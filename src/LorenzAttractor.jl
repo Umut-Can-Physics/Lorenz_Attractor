@@ -6,6 +6,13 @@ using DifferentialEquations
 using Plots
 using Interpolations
 
+"""
+    parameterized_lorenz!(du, u, p, t)
+
+Compute the derivatives of the Lorenz system in-place. The state vector
+`u = (x, y, z)` evolves according to the parameters `p = (σ, ρ, β)`.
+The result is written to `du`.
+"""
 function parameterized_lorenz!(du, u, p, t)
     x, y, z = u
     σ, ρ, β = p
@@ -15,6 +22,13 @@ function parameterized_lorenz!(du, u, p, t)
     return nothing
 end
 
+"""
+    plot_Lorenz_attractor_interpolated(u0, tspan, p; N=1000)
+
+Solve the Lorenz equations starting at `u0` over the time span `tspan` and
+return a 3‑D plot of the trajectory. The optional keyword `N` controls the
+number of interpolation points used to smooth the plot.
+"""
 function plot_Lorenz_attractor_interpolated(u0, tspan, p; N=1000)
     prob = ODEProblem(parameterized_lorenz!, u0, tspan, p)
     sol = solve(prob, Tsit5(), saveat=tspan[1] .+ (tspan[2] - tspan[1]) * (0:N) / N)

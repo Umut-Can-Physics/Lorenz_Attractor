@@ -1,0 +1,6 @@
+[deps]
+LorenzAttractor = "0e56fec3-077b-4dc7-9864-a59fa6df7bf2"
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+
+[compat]
+Documenter = "1"

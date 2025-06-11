@@ -6,8 +6,8 @@ the dynamics of chaotic systems in Julia.
 
 ## Features
 
-- In-place equation definition `parameterized_lorenz!`.
-- Helper function `plot_Lorenz_attractor_interpolated` that solves and draws
+- In-place equation definition `lorenz_derivative!`.
+- Helper function `plot_lorenz_attractor` that solves and draws
   a smooth trajectory.
 - Documentation built with [Documenter.jl](https://juliadocs.github.io/Documenter.jl/).
 

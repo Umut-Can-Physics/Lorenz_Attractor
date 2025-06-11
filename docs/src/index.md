@@ -24,7 +24,7 @@ u0 = [1.0, 0.0, 0.0]
 tspan = (0.0, 20.0)
 p = [10.0, 28.0, 8/3]
 
-plot_Lorenz_attractor_interpolated(u0, tspan, p)
+plot_lorenz_attractor(u0, tspan, p)
 ```
 
 ## API

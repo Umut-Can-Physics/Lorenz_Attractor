@@ -1,20 +1,33 @@
-# LorenzAttractor.jl
+# Lorenz Attractor
 
-This package implements the Lorenz system and provides utilities for plotting
-the well known attractor. It is intended as a minimal example for exploring
-the dynamics of chaotic systems in Julia.
+A small Python package for simulating the Lorenz system and plotting its chaotic attractor.
 
-## Features
-
-- In-place equation definition `parameterized_lorenz!`.
-- Helper function `plot_Lorenz_attractor_interpolated` that solves and draws
-  a smooth trajectory.
-- Documentation built with [Documenter.jl](https://juliadocs.github.io/Documenter.jl/).
-
-## Building the Documentation
+## Installation
 
 ```bash
-julia --project=docs docs/make.jl
+pip install -e .[plot]
 ```
 
-The generated site will be available in `docs/build`.
+## Usage
+
+```python
+from lorenz_attractor import solve_lorenz, plot_lorenz
+
+u0 = [1.0, 0.0, 0.0]
+tspan = (0.0, 20.0)
+
+# Integrate the system
+_, sol = solve_lorenz(u0, tspan)
+
+# Create a plot (requires matplotlib)
+fig = plot_lorenz(u0, tspan)
+fig.show()
+```
+
+## Testing
+
+Run the tests with `pytest`:
+
+```bash
+pytest
+```
